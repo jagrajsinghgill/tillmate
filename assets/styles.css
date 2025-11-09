@@ -1,0 +1,957 @@
+/** Styles **/
+:root {
+  --primary: #0f5323;
+  --primary-dark: #0b3a18;
+  --accent: #f8b400;
+  --light-bg: #f9f4ee;
+  --card-bg: #fffaf2;
+  --text-dark: #1a1a1a;
+  --text-muted: #5b5b5b;
+  --border-color: rgba(15, 83, 35, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9997;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 20px rgba(15, 83, 35, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 1091px) {
+  body {
+    position: relative;
+  }
+
+  nav {
+    position: fixed;
+    right: 5%;
+    top: 37px;
+    display: flex !important;
+    align-items: center;
+    z-index: 9998;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    flex-direction: row;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    transform: none !important;
+  }
+
+  nav .mobile-menu-header,
+  nav .mobile-menu-links {
+    display: none !important;
+  }
+
+  nav > a {
+    display: inline-block !important;
+    position: relative;
+  }
+
+  nav > a.cta-btn {
+    display: inline-block !important;
+  }
+}
+
+nav a {
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+nav .mobile-menu-header,
+nav .mobile-menu-links {
+  display: none;
+}
+
+.cta-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a1100;
+  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(248, 180, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(248, 180, 0, 0.45);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10000;
+  position: relative;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .swiper {
+  width: 100%;
+  height: 70vh;
+  min-height: 520px;
+}
+
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 0 48px 48px;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 43, 18, 0.75) 20%, rgba(14, 43, 18, 0.2) 70%);
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 10s ease;
+}
+
+.swiper-slide-active .hero-slide img {
+  transform: scale(1.02);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 520px;
+  color: #fff;
+  z-index: 2;
+}
+
+.hero-content span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(248, 180, 0, 0.15);
+  color: #ffd66d;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 28px;
+}
+
+.hero .swiper-button-prev,
+.hero .swiper-button-next {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
+}
+
+.hero .swiper-button-prev:hover,
+.hero .swiper-button-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hero .swiper-button-prev::after,
+.hero .swiper-button-next::after {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.primary-btn {
+  display: inline-flex;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a1100;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(248, 180, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(248, 180, 0, 0.5);
+}
+
+.stats-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 83, 35, 0.08);
+  color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.section-description {
+  color: var(--text-muted);
+  width: min(90%, 720px);
+  margin: 0 auto 48px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f6ffee 100%);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 18px 40px rgba(15, 83, 35, 0.08);
+  border: 1px solid rgba(15, 83, 35, 0.08);
+}
+
+.stat-value {
+  font-size: 2.4rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.machinery-section {
+  background: var(--light-bg);
+  padding: 90px 0;
+}
+
+.machinery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.machine-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 26px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(15, 83, 35, 0.09);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.machine-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(15, 83, 35, 0.12);
+}
+
+.machine-card .badge {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  background: var(--accent);
+  color: #1a1100;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.machine-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transform: scale(0.98);
+  transition: transform 0.4s ease;
+}
+
+.machine-image img {
+  max-height: 180px;
+}
+
+.machine-card:hover .machine-image {
+  transform: scale(1.02);
+}
+
+.machine-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.machine-price {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.machine-features {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.machine-features li + li {
+  margin-top: 6px;
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.indiamart-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.indiamart-section .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(248, 180, 0, 0.2);
+  color: #b57400;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.indiamart-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.insta-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 22px;
+  border: 1px solid rgba(248, 180, 0, 0.2);
+  box-shadow: 0 18px 36px rgba(248, 180, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.insta-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 48px rgba(248, 180, 0, 0.28);
+}
+
+.stock-badge {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: rgba(15, 83, 35, 0.12);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  z-index: 10;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background: #f9f9f9;
+}
+
+.insta-card h4 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.rating {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.price span {
+  font-weight: 500;
+  font-size: 15px;
+  color: #9e9e9e;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.insta-card a {
+  margin-top: auto;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(248, 180, 0, 0.2);
+  color: #b57400;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.insta-card a:hover {
+  background: rgba(248, 180, 0, 0.3);
+}
+
+.indiamart-cta {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.indiamart-cta a.all-products {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid rgba(15, 83, 35, 0.16);
+  color: var(--primary);
+  background: rgba(15, 83, 35, 0.08);
+}
+
+.videos-section {
+  background: var(--light-bg);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.video-card iframe {
+  width: 100%;
+  margin-right: 22px !important;
+  aspect-ratio: 16 / 9 !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 24px 40px rgba(15, 83, 35, 0.18) !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+.cta-section {
+  background: var(--primary);
+  color: #fff;
+  padding: 70px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  top: -80px;
+  left: -80px;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  bottom: -120px;
+  right: -120px;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: 18px;
+}
+
+.cta-grid {
+  margin: 40px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 800px;
+}
+
+.cta-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.cta-section a {
+  text-decoration: underline;
+}
+
+.cta-section a:hover {
+  color: #000;
+}
+
+footer {
+  background: #05240f;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.menu-backdrop {
+  display: none;
+}
+
+.mobile-menu-header {
+  display: none;
+}
+
+@media (max-width: 1090px) {
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-bar {
+    position: relative;
+  }
+
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 65%;
+    max-width: 380px;
+    min-width: 280px;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 10001 !important;
+    padding: 0;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex !important;
+    margin: 0;
+    isolation: isolate;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav > a {
+    display: none;
+  }
+
+  nav .mobile-menu-header {
+    display: flex;
+  }
+
+  nav .mobile-menu-links {
+    display: block;
+  }
+
+  nav .mobile-menu-links a {
+    display: block;
+  }
+
+  nav > a.cta-btn {
+    display: block;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+  }
+
+  nav > .mobile-menu-header {
+    display: flex;
+  }
+
+  .mobile-menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-menu-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .mobile-menu-logo span {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+  }
+
+  .menu-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--text-dark);
+    transition: background 0.2s ease, color 0.2s ease;
+    padding: 0;
+  }
+
+  .menu-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--primary);
+  }
+
+  .mobile-menu-links {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu-links a {
+    display: block;
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .mobile-menu-links a:hover {
+    background: rgba(15, 83, 35, 0.05);
+    color: var(--primary);
+  }
+
+  nav > a.cta-btn {
+    background: #d2691e;
+    color: #fff;
+    box-shadow: none;
+    padding: 16px 20px;
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    border-bottom: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  nav .cta-btn:hover {
+    background: #b85a1a;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span {
+    background: var(--primary);
+  }
+}
+
+@media (max-width: 980px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .machinery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .indiamart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .insta-card img {
+    height: 190px;
+  }
+
+  .videos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero .swiper-button-prev,
+  .hero .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero .swiper {
+    height: 68vh;
+  }
+
+  .hero-content {
+    left: 6%;
+    max-width: 90%;
+  }
+
+  .hero .swiper-button-prev,
+  .hero .swiper-button-next {
+    display: none;
+  }
+
+  .stats-grid,
+  .machinery-grid,
+  .indiamart-grid,
+  .videos-grid,
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-bar {
+    padding: 14px 0;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .machine-card,
+  .insta-card,
+  .stat-card {
+    padding: 24px;
+  }
+
+  .insta-card img {
+    height: 180px;
+  }
+
+  .cta-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content span {
+    font-size: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .primary-btn,
+  .cta-btn {
+    padding: 12px 24px;
+  }
+}
