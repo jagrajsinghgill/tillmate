@@ -73,7 +73,7 @@ header {
 }
 
 .logo img {
-  height: 60px;
+  height: 70px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -121,6 +121,10 @@ nav {
 
   nav > a.cta-btn {
     display: inline-block !important;
+  }
+
+  .cta-card.email p {
+    font-size: 14px;
   }
 }
 
@@ -587,6 +591,10 @@ nav .mobile-menu-links {
   box-shadow: 0 24px 40px rgba(15, 83, 35, 0.18) !important;
   max-width: 100% !important;
   min-width: 100% !important;
+}
+
+.video-card iframe.facebook {
+  max-height: 430px;
 }
 
 .cta-section {
