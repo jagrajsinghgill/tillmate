@@ -1,7 +1,6 @@
-# <a href="https://jagrajsinghgill.github.io/tillmate/">Tillmate Multitech</a>
+# <a href="https://tillmate.in/">Tillmate Multitech</a>
 
-Tillmate Multitech is a modern web application designed to bring innovation and efficiency to the agricultural and equipment management space.
-The project showcases a responsive, performance-optimized website built with HTML, CSS, JavaScript, and modern UI/UX principles — representing the Tillmate Multitech brand identity and its commitment to smarter cultivation solutions.
+Tillmate Multitech, established in 2022 in Phagwara, Punjab, is a leading manufacturer and supplier of high-quality agricultural machinery. We specialize in Tractor Rotavators, Seed Drills, Power Weeders, and other farm implements designed for Indian soil conditions. With a strong focus on performance, durability, and farmer satisfaction, we aim to empower the farming community through innovation and reliability. Our products are trusted by farmers across Punjab and India for their superior quality and long service life.
 
 
 ## Features

@@ -269,6 +269,10 @@ nav .mobile-menu-links {
   font-weight: 700;
 }
 
+.hero .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
+}
+
 .primary-btn {
   display: inline-flex;
   padding: 14px 30px;
