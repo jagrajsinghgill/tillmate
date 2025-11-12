@@ -1,0 +1,8 @@
+# robots.txt for https://tillmate.in/
+# This file tells search engines what they can crawl and where to find your sitemap.
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tillmate.in/sitemap.xml
